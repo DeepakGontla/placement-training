@@ -1,0 +1,31 @@
+class Pattern {
+    void print(int n) {
+        System.out.println("Base pattern");
+    }
+}
+
+class SmartPattern extends Pattern {
+
+    @Override
+    void print(int n) {
+        for(int i=1;i<=n;i++) {
+            for(int j=1;j<=i;j++)
+                System.out.print(j+" ");
+            System.out.println();
+        }
+    }
+
+    void print(int n, String type) {   // overloading
+        for(int i=n;i>=1;i--) {
+            for(int j=1;j<=i;j++)
+                System.out.print(j+" ");
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        SmartPattern p=new SmartPattern();
+        p.print(5);
+        p.print(5,"reverse");
+    }
+}
