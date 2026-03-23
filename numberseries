@@ -1,0 +1,31 @@
+ //numberseries
+  class Series {
+    void generate(int n) {
+        System.out.println("Natural:");
+        for(int i=1;i<=n;i++) System.out.print(i+" ");
+        System.out.println();
+    }
+}
+
+class SmartSeries extends Series {
+
+    @Override
+    void generate(int n) {
+        System.out.println("Even:");
+        for(int i=2;i<=n;i+=2) System.out.print(i+" ");
+        System.out.println();
+    }
+
+    void generate(int n, String type) {   // overloading
+        if(type.equals("odd")) {
+            for(int i=1;i<=n;i+=2) System.out.print(i+" ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        SmartSeries s = new SmartSeries();
+        s.generate(10);
+        s.generate(10,"odd");
+    }
+}
