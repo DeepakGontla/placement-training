@@ -1,0 +1,28 @@
+class Sequence {
+    void series(int n) {
+        System.out.println("Default series");
+    }
+}
+
+class SmartSequence extends Sequence {
+
+    @Override
+    void series(int n) {
+        for(int i=1;i<=n;i++)
+            System.out.print(i+" ");
+        System.out.println();
+    }
+
+    void series(int start,int diff,int n) {  // overloading
+        for(int i=0;i<n;i++) {
+            System.out.print(start+" ");
+            start+=diff;
+        }
+    }
+
+    public static void main(String[] args) {
+        SmartSequence s=new SmartSequence();
+        s.series(5);
+        s.series(2,3,5);
+    }
+}
