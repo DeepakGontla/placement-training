@@ -1,0 +1,27 @@
+class Game {
+    void play(int guess) {
+        System.out.println("Game started");
+    }
+}
+
+class SmartGame extends Game {
+
+    @Override
+    void play(int guess) {
+        int secret = 7;
+        if(guess==secret)
+            System.out.println("Correct!");
+        else
+            System.out.println("Wrong!");
+    }
+
+    void play() {   // overloading
+        System.out.println("Guess a number between 1-10");
+    }
+
+    public static void main(String[] args) {
+        SmartGame g=new SmartGame();
+        g.play();
+        g.play(7);
+    }
+}
